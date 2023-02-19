@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Bienvenid@</title>
+
+  <!-- Cargar Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">La aplicación de gestión de tareas de Mario Luquero</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/login}">Iniciar sesión</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/logout}">Cerrar sesión</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container my-5">
+  <h1 class="text-center">Bienvenid@ a tu aplicación de gestión de tareas.</h1>
+  <br>
+  <div th:insert="fragmento.html"></div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="card my-3">
+        <div class="card-body">
+          <h5 class="card-title">Portal del usuario</h5>
+          <p class="card-text">Desde el portal de usuario podrás consultar tu perfil y administrar tus tareas, desde
+            editarlas, añadir nuevas tareas o borrarlas.<br>No podrás acceder a los permisos de administrador
+          a no ser que estés registrado como uno.
+          <br><br><br></p>
+          <a th:href="@{/user}" class="btn btn-primary">Ir al portal de usuario</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card my-3">
+        <div class="card-body">
+          <h5 class="card-title">Portal del administrador</h5>
+          <p class="card-text">Si estás registrad@ como administrador podrás gestionar todos los usuarios, desde
+            sus tares, ya sea editarlas, o añadir unas nuevas. También puedes eliminar usuarios junto con todas sus tareas,
+          o puedes editar la información de cualquier usuario. También puedes desde la vista dashboard ver el número total de tareas,
+            en qué estado se encuentran y el promedio de tareas total.</p>
+          <a th:href="@{/admin}" class="btn btn-primary">Ir al portal de administrador</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
